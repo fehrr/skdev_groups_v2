@@ -1,0 +1,872 @@
+<html>
+
+<head>
+	<link href="./skdev/css/css.css" rel="stylesheet" type="text/css" />
+	<!-- SE O NOME DO SEU ARQUIVO CSS FOR DIFERENTE,VC APENAS TROCA-->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+	<!-- IMPORT JQUERY-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> <!-- IMPORT JQUERY-->
+</head>
+
+<body>
+
+	<div class="popupconfirmacao">
+		<img src="./skdev/img/informacao.png">
+		<h2>Tem certeza que deseja<br>excluir?</h2>
+		<div class="botoesdivpopup">
+			<button class="popup_botaoconfirmar">Confirmar</button>
+			<button class="popup_botaocancelar">Cancelar</button>
+		</div>
+	</div>
+
+	<div class="teladeloading">
+		<img src="./skdev/img/loading.svg" draggable="false">
+	</div>
+	<div class="groups">
+		<div class="barralateral">
+			<div class="perfilusuario">
+				<img src="./skdev/img/usuario-de-perfil.png" class="perfilimg" draggable="false">
+				<div class="box-perfil">
+					<img src="./skdev/img/nome.png" class="imgbox" draggable="false">
+					<h2>Erick Silva #100092</h2>
+				</div>
+				<div class="box-perfil">
+					<img src="./skdev/img/grupo.png" class="imgbox" draggable="false">
+					<h2>Administração</h2>
+				</div>
+				<div class="box-perfil">
+					<img src="./skdev/img/cargo.png" class="imgbox" draggable="false">
+					<h2>Ajudante</h2>
+				</div>
+			</div>
+			<div class="botoesmenu">
+				<div class="box-botaomenu" onclick="AlterarMenu('Inicio')">
+					<h2>Inicio</h2>
+					<img src="./skdev/img/inicio.png" class="img-boxmenu" draggable="false">
+				</div>
+				<div class="box-botaomenu" onclick="AlterarMenu('CriarGrupos')">
+					<h2>Criar Grupos</h2>
+					<img src="./skdev/img/adicionar.png" class="img-boxmenu" draggable="false">
+				</div>
+				<div class="box-botaomenu" onclick="AlterarMenu('GerenciarGrupos')">
+					<h2>Gerenciar Grupos</h2>
+					<img src="./skdev/img/gerenciar.png" class="img-boxmenu" draggable="false">
+				</div>
+				<div class="box-botaomenu" onclick="AlterarMenu('GerenciarStaff')">
+					<h2>Gerenciar Staff</h2>
+					<img src="./skdev/img/staff.png" class="img-boxmenu" draggable="false">
+				</div>
+				<div class="box-botaomenu" onclick="AlterarMenu('ConfigurarPainel')">
+					<h2>Configurar Painel</h2>
+					<img src="./skdev/img/configurar.png" class="img-boxmenu" draggable="false">
+				</div>
+			</div>
+		</div>
+
+		<!-- Começo Botão Inicio -->
+		<div class="fundopainel">
+			<div class="informacoespainel">
+				<div class="boxinformacao">
+					<img src="./skdev/img/membros.png" class="informacaoimg" draggable="false">
+					<h2>Ajudantes Online: 12</h2>
+				</div>
+				<div class="boxinformacao">
+					<img src="./skdev/img/organizacoes.png" class="informacaoimg" draggable="false">
+					<h2>Organizações: 20</h2>
+				</div>
+				<div class="boxinformacao">
+					<img src="./skdev/img/pessoas.png" class="informacaoimg" draggable="false">
+					<h2>Cidadões Online: 108</h2>
+				</div>
+				<div class="logobolinha">
+					<img src="./skdev/img/logo.png" class="logocidade" draggable="false">
+				</div>
+			</div>
+
+			<div class="bemvindopainel">
+				<h2>Seja bem-vindo, Erick Silva!</h2>
+				<h3>
+					Você está dentro do painel gerenciador de organizações<br>
+					Onde foi criado no intuito de ser um painel facilitador de vidas<br>
+					Nele você vai poder desde criar novos grupos<br>
+					Até configurar permissões de cargos<br>
+					Caso você receba uma permissão especial irá poder acessar<br>
+					Configurações de blacklist, Configuração de logs e mais!
+				</h3>
+				<img src="./skdev/img/personagem.png" class="personagembomvindo" draggable="false">
+			</div>
+
+			<h2 class="textologs">Ultimas ações da administração</h2>
+			<div class="barraseparar"></div>
+
+			<div class="logsbox">
+				<div class="logdiv">
+					<img src="./skdev/img/informacao.png" class="logdivimg" draggable="false">
+					<h2>Nenhuma log encontrada #1</h2>
+				</div>
+				<div class="logdiv">
+					<img src="./skdev/img/informacao.png" class="logdivimg" draggable="false">
+					<h2>Nenhuma log encontrada #2</h2>
+				</div>
+				<div class="logdiv">
+					<img src="./skdev/img/informacao.png" class="logdivimg" draggable="false">
+					<h2>Nenhuma log encontrada #3</h2>
+				</div>
+			</div>
+		</div>
+		<!-- Final Botão Inicio -->
+
+		<!-- Começo Criar Grupos -->
+		<div class="adicionarcargo">
+			<img src="./skdev/img/voltar.png" class="setavoltar-adicionarcargo" draggable="false">
+			<div class="logobolinha-adicionarcargo"><img src="./skdev/img/logo.png" draggable="false"></div>
+
+			<img src="./skdev/img/organizacao.png" class="orgcargoimg" draggable="false">
+			<h2 class="criarcargoadicionarh2">Criar Cargo</h2>
+
+			<h2 class="nomedocargopainelh2">Nome do Cargo no Painel</h2>
+			<input type="text" class="inputnomedocargo">
+
+			<h2 class="nomedocargoingameh2">Nome do cargo ingame</h2>
+			<input type="text" class="inputnomedocargoingame">
+
+			<h2 class="permissaodocargoingameh2">Permissão do Cargo Ingame</h2>
+			<input type="text" class="inputpermissaodocargoingame">
+
+			<h2 class="permissoesdocargo">Permissões do Cargo</h2>
+			<img src="./skdev/img/seta.png" class="selecionarpermissoesdocargoimg" draggable="false">
+			<select class="selecionarpermissoesdocargo">
+				<option value="nada">Selecione As Permissões</option>
+				<option value="valor2">Mudar nome da organização</option>
+				<option value="valor3">Mudar foto da organização</option>
+				<option value="valor4">Adicionar Membro</option>
+				<option value="valor5">Upar Membro</option>
+				<option value="valor6">Rebaixar Membro</option>
+				<option value="valor7">Remover Membro</option>
+				<option value="valor8">Alterar Logs</option>
+			</select>
+
+			<div class="espacopermissoes">
+				<div class="divpermissao">
+					<h2>Mudar nome da organização</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="divpermissao">
+					<h2>Mudar nome da organização</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="divpermissao">
+					<h2>Mudar nome da organização</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="divpermissao">
+					<h2>Mudar nome da organização</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="divpermissao">
+					<h2>Mudar nome da organização</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="divpermissao">
+					<h2>Mudar nome da organização</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+			</div>
+			<button class="botaoconfirmarcriargrupo">
+				Confirmar
+				<img src="./skdev/img/confirmar.png" draggable="false">
+			</button>
+		</div>
+
+		<div class="selecionarcriarouexistente">
+			<div class="boxcriarouexistente">
+				<h2>
+					Você pretende criar uma organização<br>
+					ou usar uma existente para criar outra?
+				</h2>
+
+				<img src="./skdev/img/seta.png" class="setaselecionarcriarouexistentesssss" draggable="false">
+				<select class="selecionarcriarouexistentessssss" onchange="SelecionarCriacaodegrupos()">
+					<option value="nada">Selecionar Opção</option>
+					<option value="valor2">Criar Uma Nova Organização</option>
+					<option value="valor3">Usar Organização Existente</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="painelcriargrupo">
+			<div class="informacaogrupo">
+				<div class="fotogrupo" onclick="mudarFotoCriacao()">
+					<img src="./skdev/img/perfil-criar-grupo.png" class="imgfoto" draggable="false">
+				</div>
+				<input type="file" accept="image/jpeg, image/png, image/jpg" class="inputfotogrupo"/>
+
+				<h2 class="grupoh2">Nome da Organização:</h2>
+				<input type="text" class="textonomedaorg">
+
+				<h2 class="maximodemembroscriacao">Máximo de Membros:</h2>
+				<input type="text" class="textomaximodemembros">
+
+				<h2 class="logsgeraish2">Logs Gerais:</h2>
+				<input type="text" class="textologsgerais">
+
+				<h2 class="blacklisth2">Blacklist:</h2>
+				<div class="selectbox1"><img src="./skdev/img/cancelar.png" class="imgfoto" draggable="false"></div>
+				<div class="selectbox2"><img src="./skdev/img/confirmar.png" class="imgfoto" draggable="false"></div>
+
+				<h2 class="blacklisthorash2">Blacklist Horas:</h2>
+				<input type="text" class="blacklisthorasinput">
+
+				<button class="botaocriar">
+					<img src="./skdev/img/criar.png" class="criarimg" draggable="false">
+					<h2>Criar Organização</h2>
+				</button>
+				<button class="botaocancelar">
+					<img src="./skdev/img/cancelarcriacao.png" class="cancelarimg" draggable="false">
+					<h2>Cancelar Criação</h2>
+				</button>
+			</div>
+
+			<div class="partedegrupos">
+				<h2 class="partedecargosh2">Parte de Cargos</h2>
+				<div class="barrapartedecargos"></div>
+
+				<button class="botaoadicionarcargo">
+					<img src="./skdev/img/adicionar.png" class="adicionarcargoimg" draggable="false">
+					<h2>ADICIONAR CARGO</h2>
+				</button>
+
+				<div class="boxcargos">
+					<div class="cargodiv">
+						<img src="./skdev/img/cargo.png" class="cargoimg" draggable="false">
+						<h2 class="cargoh2">Supervisor Geral</h2>
+
+						<button class="clonarcargobotao">
+							<img src="./skdev/img/clonar.png" draggable="false">
+							<h2>Clonar Cargo</h2>
+						</button>
+						<button class="editarcargobotao">
+							<img src="./skdev/img/editar.png" draggable="false">
+							<h2>Editar Cargo</h2>
+						</button>
+						<button class="excluircargobotao">
+							<img src="./skdev/img/excluir.png" draggable="false">
+							<h2>Excluir Cargo</h2>
+						</button>
+					</div>
+					<div class="cargodiv">
+						<img src="./skdev/img/cargo.png" class="cargoimg" draggable="false">
+						<h2 class="cargoh2">Supervisor Geral</h2>
+
+						<button class="clonarcargobotao">
+							<img src="./skdev/img/clonar.png" draggable="false">
+							<h2>Clonar Cargo</h2>
+						</button>
+						<button class="editarcargobotao">
+							<img src="./skdev/img/editar.png" draggable="false">
+							<h2>Editar Cargo</h2>
+						</button>
+						<button class="excluircargobotao">
+							<img src="./skdev/img/excluir.png" draggable="false">
+							<h2>Excluir Cargo</h2>
+						</button>
+					</div>
+					<div class="cargodiv">
+						<img src="./skdev/img/cargo.png" class="cargoimg" draggable="false">
+						<h2 class="cargoh2">Supervisor Geral</h2>
+
+						<button class="clonarcargobotao">
+							<img src="./skdev/img/clonar.png" draggable="false">
+							<h2>Clonar Cargo</h2>
+						</button>
+						<button class="editarcargobotao">
+							<img src="./skdev/img/editar.png" draggable="false">
+							<h2>Editar Cargo</h2>
+						</button>
+						<button class="excluircargobotao">
+							<img src="./skdev/img/excluir.png" draggable="false">
+							<h2>Excluir Cargo</h2>
+						</button>
+					</div>
+					<div class="cargodiv">
+						<img src="./skdev/img/cargo.png" class="cargoimg" draggable="false">
+						<h2 class="cargoh2">Supervisor Geral</h2>
+
+						<button class="clonarcargobotao">
+							<img src="./skdev/img/clonar.png" draggable="false">
+							<h2>Clonar Cargo</h2>
+						</button>
+						<button class="editarcargobotao">
+							<img src="./skdev/img/editar.png" draggable="false">
+							<h2>Editar Cargo</h2>
+						</button>
+						<button class="excluircargobotao">
+							<img src="./skdev/img/excluir.png" draggable="false">
+							<h2>Excluir Cargo</h2>
+						</button>
+					</div>
+					<div class="cargodiv">
+						<img src="./skdev/img/cargo.png" class="cargoimg" draggable="false">
+						<h2 class="cargoh2">Supervisor Geral</h2>
+
+						<button class="clonarcargobotao">
+							<img src="./skdev/img/clonar.png" draggable="false">
+							<h2>Clonar Cargo</h2>
+						</button>
+						<button class="editarcargobotao">
+							<img src="./skdev/img/editar.png" draggable="false">
+							<h2>Editar Cargo</h2>
+						</button>
+						<button class="excluircargobotao">
+							<img src="./skdev/img/excluir.png" draggable="false">
+							<h2>Excluir Cargo</h2>
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- Final Criar Grupos -->
+
+
+		<!-- Começo Gerenciar Grupos Staff -->
+		<div class="gerenciargrupostaff">
+			<h2 class="h2organizações">Organizações</h2>
+			<div class="barrasepararorganizacoes"></div>
+
+			<div class="logobolinhagerenciargrupostaff"><img src="./skdev/img/logo.png" draggable="false"></div>
+
+			<div class="boxgrupos">
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+				<div class="grupogerenciargrupobox">
+					<div class="bolinhalogogerenciargrupo">
+						<img src="https://lojabarddal.com.br/wp-content/uploads/2018/07/policia_federal_bordado.png" draggable="false">
+					</div>
+
+					<h2 class="h2gruponome">Policial Federal</h2>
+					<button class="visualizarestatisticagerenciargrupo" onclick="visualizarEstatisticas('Policia Federal')">
+						<img src="./skdev/img/visualizar.png" draggable="false">
+						<h2>Visualizar Estatisticas</h2>
+					</button>
+					<button class="editarorganizacaogerenciargrupo" onclick="editarOrganizacaoGrupo('Policia Federal')">
+						<img src="./skdev/img/editar.png" draggable="false">
+						<h2>Editar Organização</h2>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="estatisticasgrupo">
+			<img src="./skdev/img/setavoltar.png" class="setavoltar_estatisticas" draggable="false">
+
+			<div class="estatisticas_logobolinha">
+				<img src="https://i.pinimg.com/736x/69/27/95/692795bd1ce94265e2cb349793bca464.jpg" draggable="false">
+			</div>
+
+			<h2 class="estatisticas_nomeorgh2">Nome da Organização</h2>
+			<div class="estatisticas_nomeorgdiv">
+				<h2>Policia Federal</h2>
+			</div>
+
+			<div class="estatisticas_boxtotaldemembros">
+				<img src="./skdev/img/membrostotal.png" draggable="false">
+				<h2>Total de Membros</h2>
+				<h3>20</h3>
+			</div>
+			<div class="estatisticas_boxmembrosonline">
+				<img src="./skdev/img/online.png" draggable="false">
+				<h2>Membros Online</h2>
+				<h3>20</h3>
+			</div>
+			<div class="estatisticas_boxmembrosoffline">
+				<img src="./skdev/img/offline.png" draggable="false">
+				<h2>Membros Offline</h2>
+				<h3>20</h3>
+			</div>
+
+			<h2 class="estatisticas_cargosh2">Cargos</h2>
+			<div class="estatisticas_separarh2"></div>
+
+			<div class="estatisticas_boxcargos">
+				<div class="estatisticas_cargo">
+					<h2>Tenente Coronel</h2>
+					<img src="./skdev/img/cargo.png" draggable="false">
+				</div>
+				<div class="estatisticas_cargo">
+					<h2>Tenente Coronel</h2>
+					<img src="./skdev/img/cargo.png" draggable="false">
+				</div>
+				<div class="estatisticas_cargo">
+					<h2>Tenente Coronel</h2>
+					<img src="./skdev/img/cargo.png" draggable="false">
+				</div>
+				<div class="estatisticas_cargo">
+					<h2>Tenente Coronel</h2>
+					<img src="./skdev/img/cargo.png" draggable="false">
+				</div>
+				<div class="estatisticas_cargo">
+					<h2>Tenente Coronel</h2>
+					<img src="./skdev/img/cargo.png" draggable="false">
+				</div>
+				<div class="estatisticas_cargo">
+					<h2>Tenente Coronel</h2>
+					<img src="./skdev/img/cargo.png" draggable="false">
+				</div>
+			</div>
+
+			<h2 class="estatisticas_partedosmembroh2">Parte dos Membros</h2>
+			<div class="estatisticas_separadorpartedosmembro"></div>
+
+			<img src="./skdev/img/pesquisar.png" class="estatisticas_pesquisarmembroimg" draggable="false">
+			<input type="text" class="estatisticas_pesquisarmembro" oninput="pesquisar(this)"></input>
+
+			<button class="estatisticas_botaodeaaz" onclick="filtrodeaazestatisticasacao()">
+				<img src="./skdev/img/aaz.png" draggable="false">
+			</button>
+			
+			<div class="estatisticas_membrosbox">
+				<div class="estatisticas_membro">
+					<img src="./skdev/img/membro.png" draggable="false">
+					<h2 class="estatisticas_membro_id">38676</h2>
+					<h2 class="estatisticas_membro_nome">Kevin Pietro Aparício</h2>
+					<h2 class="estatisticas_membro_cargo">Lider</h2>
+				</div>
+				<div class="estatisticas_membro">
+					<img src="./skdev/img/membro.png" draggable="false">
+					<h2 class="estatisticas_membro_id">42262</h2>
+					<h2 class="estatisticas_membro_nome">Lucas Benjamin Miguel Moura</h2>
+					<h2 class="estatisticas_membro_cargo">Lider</h2>
+				</div>
+				<div class="estatisticas_membro">
+					<img src="./skdev/img/membro.png" draggable="false">
+					<h2 class="estatisticas_membro_id">48665</h2>
+					<h2 class="estatisticas_membro_nome">Hugo Geraldo André Cardoso</h2>
+					<h2 class="estatisticas_membro_cargo">membro</h2>
+				</div>
+				<div class="estatisticas_membro">
+					<img src="./skdev/img/membro.png" draggable="false">
+					<h2 class="estatisticas_membro_id">24770</h2>
+					<h2 class="estatisticas_membro_nome">Edson Geraldo Sales</h2>
+					<h2 class="estatisticas_membro_cargo">membro</h2>
+				</div>
+				<div class="estatisticas_membro">
+					<img src="./skdev/img/membro.png" draggable="false">
+					<h2 class="estatisticas_membro_id">27029</h2>
+					<h2 class="estatisticas_membro_nome">Renan André Peixoto</h2>
+					<h2 class="estatisticas_membro_cargo">membro</h2>
+				</div>
+				<div class="estatisticas_membro">
+					<img src="./skdev/img/membro.png" draggable="false">
+					<h2 class="estatisticas_membro_id">34684</h2>
+					<h2 class="estatisticas_membro_nome">Enzo Arthur Farias</h2>
+					<h2 class="estatisticas_membro_cargo">membro</h2>
+				</div>
+			</div>
+		</div>
+		<!-- Final Gerenciar Grupos Staff -->
+
+		<!-- Começo Gerenciar Staff -->
+		<div class="gerenciarstaff">
+			<div class="gerenciarstaff_logobolinha"><img src="./skdev/img/perfil.png" draggable="false"></div>
+
+			<h2 class="gerenciarstaff_nomedaorg">Nome da Organização</h2>
+			<input type="text" value="Administração" class="gerenciarstaff_inputnomedaorg" disabled>
+
+			<div class="gerenciarstaff_membrostotais">
+				<img src="./skdev/img/membros.png" draggable="false">
+				<h2>Membros Totais: 22</h2>
+			</div>
+			<div class="gerenciarstaff_membrosonline">
+				<img src="./skdev/img/online.png" draggable="false">
+				<h2>Membros Online: 3</h2>
+			</div>
+			<div class="gerenciarstaff_membrosoffline">
+				<img src="./skdev/img/offline.png" draggable="false">
+				<h2>Membros Offline: 19</h2>
+			</div>
+
+			<button class="gerenciarstaff_botaoeditargrupodestaff" onclick="gerenciarStaffEditarGrupo()">
+				Editar Grupo de Staff
+				<img src="./skdev/img/editar.png" draggable="false">
+			</button>
+
+			<h2 class="gerenciarstaff_partedemembrosh2">Parte dos Membros</h2>
+			<div class="gerenciarstaff_barraseparacaopartedemembros"></div>
+
+			<img src="./skdev/img/pesquisar.png" class="gerenciarstaff_pesquisarimg">
+			<input type="text" class="gerenciarstaff_pesquisarmembroinput" oninput="gerenciarstaffinput()">
+
+			<button class="gerenciarstaff_botaodeaaz" onclick="AAZBotaogerenciarstaff()"><img src="./skdev/img/aaz.png" draggable="false"></button>
+			<button class="gerenciarstaff_botaoadicionarmembro" onclick="gerenciarstaffBotaoadicionarmembro()">
+				Adicionar Membro
+				<img src="./skdev/img/adicionar.png" draggable="false">
+			</button>
+
+			<div class="gerenciarstaff_boxmembros">
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">6775844</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Mirella Daiane Assunção</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Moderador Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">6839786</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Enrico Diego Lima</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Staff Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">1576320</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Julio Sérgio Theo Rodrigues</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Admin Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">7285583</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Adriana Fernanda Malu Gomes</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Admin Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">3402811</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Noah Nathan Alves</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Staff Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">3148586</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Lara Yasmin Marina Lima</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Moderador Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+				<div class="gerenciarstaff_membro">
+					<img src="./skdev/img/online.png" draggable="false">
+					<h2 class="gerenciarstaff_iddomembroh2">7117361</h2>
+					<h2 class="gerenciarstaff_nomedomembroh2">Heitor Otávio da Mota</h2>
+					<h2 class="gerenciarstaff_cargodomembroh2">Suporte Geral</h2>
+
+					<div class="gerenciarstaff_boxupar"><img src="./skdev/img/upar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxrebaixar"><img src="./skdev/img/rebaixar.png" draggable="false"></div>
+					<div class="gerenciarstaff_boxremover"><img src="./skdev/img/expulsar.png" draggable="false"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="adicionarmembro">
+			<img src="./skdev/img/voltar.png" class="adicionarmembro_setavoltar" draggable="false">
+
+			<img src="./skdev/img/membro.png" class="adicionarmembro_membroimg" draggable="false">
+
+			<div class="adicionarmembro_logobolinha">
+				<img src="./skdev/img/logo.png" draggable="false">
+			</div>
+
+			<h2 class="adicionarmembro_adicionarcargonomembroh2">Adicionar Cargo no Membro</h2>
+			<h2 class="adicionarmembro_informariddomembroh2">Informe o Seguinte ID do Membro</h2>
+			<input type="text" class="adicionarmembro_inputiddomembro">
+			
+			<button class="adicionarmembro_botaoverificariddomembro">
+				Verificar
+				<img src="./skdev/img/confirmar.png" draggable="false">
+			</button>
+			
+			<h2 class="adicionarmembro_selecionarcargosdomembroh2">Selecione Abaixo os Cargos Que o Membro irá Receber</h2>
+
+			<img src="./skdev/img/seta.png" class="adicionarmembro_setaselectcargos" draggable="false">
+			<select class="adicionarmembro_selectselecaodecargos">
+				<option value="nada">Selecionar os cargos do player</option>
+				<option value="valor1">Suporte</option>
+				<option value="valor1">Administrador</option>
+				<option value="valor1">Moderador</option>
+			</select>
+
+			<div class="adicionarmembro_cargosselecionadosbox">
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="adicionarmembro_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+			</div>
+
+			<button class="adicionarmembro_confirmaradicaomembro">
+				Confirmar
+				<img src="./skdev/img/confirmar.png" draggable="false">
+			</button>
+		</div>
+		<!-- Final Gerenciar Staff -->
+
+		<!-- Começo Gerenciar Painel Staff -->
+
+		<div class="gerenciarpainelstaff">
+			<div class="gerenciarpainelstaff_logobolinha">
+				<img src="./skdev/img/logo.png" draggable="false">
+			</div>
+
+			<div class="gerenciarpainelstaff_fotodeperfil"><img src="./skdev/img/perfil.png" draggable="false"></div>
+			<div class="gerenciarpainelstaff_boxnome">
+				<img src="./skdev/img/nome.png" draggable="false">
+				<h2>Erick Silva #1023032</h2>
+			</div>
+			<div class="gerenciarpainelstaff_boxgrupo">
+				<img src="./skdev/img/grupo.png" draggable="false">
+				<h2>Administração do servidor</h2>
+			</div>
+			<div class="gerenciarpainelstaff_boxcargo">
+				<img src="./skdev/img/cargo.png" draggable="false">
+				<h2>Supervisor Geral de Organizações</h2>
+			</div>
+
+			<button class="gerenciarpainelstaff_botaopaineladicionarmembros">
+				<h2>Painel Adicionar Membros</h2>
+				<img src="./skdev/img/adicionarmembro.png" draggable="false">
+			</button>
+			<button class="gerenciarpainelstaff_botaosalvaralteracoesdelog">
+				<h2>Salvar Alterações de Log</h2>
+				<img src="./skdev/img/salvar.png" draggable="false">
+			</button>
+
+			<h2 class="gerenciarpainelstaff_h2loggeral">Log Geral</h2>
+			<input type="text" class="gerenciarpainelstaff_inputloggeral">
+			<h2 class="gerenciarpainelstaff_h2criacaodeorg">Log Criação de Organização</h2>
+			<input type="text" class="gerenciarpainelstaff_inputcriacaodeorg">
+			<h2 class="gerenciarpainelstaff_h2membroremovidostaff">Log Removido Staff</h2>
+			<input type="text" class="gerenciarpainelstaff_inputmembroremovidostaff">
+			<h2 class="gerenciarpainelstaff_h2membrosupadosstaff">Log Membros upados staff</h2>
+			<input type="text" class="gerenciarpainelstaff_inputmembrosupadosstaff">
+			<h2 class="gerenciarpainelstaff_h2membrosrebaixadosstaff">Log Membros rebaixados staff</h2>
+			<input type="text" class="gerenciarpainelstaff_inputmembrosrebaixadosstaff">
+			<h2 class="gerenciarpainelstaff_h2membrosadicionadosstaff">Log Membros Adicionados staff</h2>
+			<input type="text" class="gerenciarpainelstaff_inputmembrosadicionadosstaff">
+		</div>
+
+		<div class="gerenciarcidadao">
+			<img src="./skdev/img/voltar.png" class="gerenciarcidadao_setavoltar" draggable="false" onclick="gerenciarCidadaoVoltar()">
+
+			<img src="./skdev/img/membro.png" class="gerenciarcidadao_membroimg" draggable="false">
+
+			<div class="gerenciarcidadao_logobolinha">
+				<img src="./skdev/img/logo.png" draggable="false">
+			</div>
+
+			<h2 class="gerenciarcidadao_adicionarcargonomembroh2">Gerenciar Cidadão</h2>
+			<h2 class="gerenciarcidadao_informariddomembroh2">Informe o Seguinte ID do Cidadao</h2>
+			<input type="text" class="gerenciarcidadao_inputiddomembro">
+			
+			<h2 class="gerenciarcidadao_selecionarcargosdomembroh2">Selecione abaixo a ação no seguinte membro</h2>
+
+			<img src="./skdev/img/seta.png" class="gerenciarcidadao_setaselectcargos" draggable="false">
+			<select class="gerenciarcidadao_selectselecaodecargos" onchange="SelecionarAcaodeGerenciarCidadao()">
+				<option>Selecionar a ação</option>
+				<option>Gerenciar Cargos</option>
+				<option>Adicionar Blacklist</option>
+				<option>Remover Blacklist</option>
+			</select>
+
+			<div class="gerenciarcidadao_cargosselecionadosbox">
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+				<div class="gerenciarcidadao_cargoselecionado">
+					<h2>Supervisor Geral</h2>
+					<img src="./skdev/img/apagar.png" draggable="false">
+				</div>
+			</div>
+
+			<h2 class="gerenciarcidadao_horasadicionarh2">Digite abaixo o total de horas para adicionar de blacklist</h2>
+			<input type="text" class="gerenciarcidadao_inputhorasadicionar">
+
+			<h2 class="gerenciarcidadao_horasdeblacklistdoplayerh2">Deseja remover a seguinte blacklist do player: 10/05/2023?</h2>
+
+			<button class="gerenciarcidadao_confirmaradicaomembro" onclick="ConfirmarGerenciamentodocidadao()">
+				Confirmar
+				<img src="./skdev/img/confirmar.png" draggable="false">
+			</button>
+		</div>
+		<!-- Final Gerenciar Painel Staff -->
+	</div>
+
+	<script src="./skdev/js/js.js" type="text/javascript"></script>
+</body>
+
+</html>
